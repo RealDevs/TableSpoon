@@ -18,10 +18,6 @@ class EnderChest extends Spawnable implements InventoryHolder, Nameable{
 		$this->inventory = new EnderChestInventory($this);
 	}
 
-	public function getInventoryOf(Player $player) : EnderChestInventory{
-		return new EnderChestInventory($this);
-	}
-
 	public function addAdditionalSpawnData(CompoundTag $nbt){
 		if($this->hasName()){
 			$nbt->CustomName = $this->namedtag->CustomName;
@@ -32,7 +28,7 @@ class EnderChest extends Spawnable implements InventoryHolder, Nameable{
 	 * @return EnderChestInventory
 	 */
 	public function getInventory() : EnderChestInventory{
-		return $this->inventory;
+		return new EnderChestInventory($this);
 	}
 
 	/**

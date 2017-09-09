@@ -86,7 +86,7 @@ class EnderChest extends Solid{
 				]);
 				$tile = Tile::createTile(Tiles::ENDER_CHEST, $this->getLevel(), $nbt);
 			}
-			$player->addWindow($tile->getInventoryOf($player));
+			$player->addWindow($tile->getInventory());
 		}
 		return true;
 	}
@@ -104,7 +104,7 @@ class EnderChest extends Solid{
 
 	public function getDrops(Item $item) : array{
 		if($item->isPickaxe()){
-			if($item->hasEnchantment(Enchantment::TYPE_MINING_SILK_TOUCH)){
+			if($item->hasEnchantment(Enchantment::SILK_TOUCH)){
 				return parent::getDrops($item);
 			}
 			return [ItemFactory::get(Item::OBSIDIAN, 0, 8)];
