@@ -1,4 +1,8 @@
 name: TableSpoon
+description: PocketMine but with low-fat
 main: tablespoon\TableSpoon
-api: 3.0.0-ALPHA7
+api: 3.0.0-ALPHA9
 version: 1.0
+authors:
+ - Muqsit
+ - mal0ne_23
