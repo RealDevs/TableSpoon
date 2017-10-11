@@ -15,7 +15,7 @@ class EnderChestInventory extends ContainerInventory{
 	/** @var Player */
 	private $user;
 
-	public function onOpen(Player $player){
+	public function onOpen(Player $player): void{
 		$this->user = $player;
 		if(isset($player->namedtag->EnderItems) && $player->namedtag->EnderItems instanceof ListTag){
 			foreach($player->namedtag->EnderItems as $slot => $itemNBT){
